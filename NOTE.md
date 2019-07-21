@@ -6,7 +6,15 @@ This project is tested only with node version specified in [.nvmrc](.nvmrc), tho
 
 ## yarn
 
-Only yarn is officially considered. Therefore this project only maintains _yarn.lock_, which **yarn** generates. Do not commit _package-lock.json_, which **npm** generates.
+Only yarn is officially considered.
+
+### lock file
+
+Therefore this project only maintains _yarn.lock_, which **yarn** generates. Do not commit _package-lock.json_, which **npm** generates.
+
+### version
+
+The version of yarn should satisfy the condition specified on package.json's `engine.yarn` field.
 
 ## module aliases
 
