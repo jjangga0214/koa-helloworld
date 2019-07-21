@@ -15,22 +15,22 @@ Demo of koa.
 
 Please read [NOTE.md](NOTE.md), before getting started.
 
-## getting started
+## Getting started
 
 ```bash
 yarn install
 ```
 
-## yarn scripts
+## Yarn scripts
 
 ```bash
-# run server
-yarn start
+yarn start # start server with nodemon
 
-# run jest for all "*.test.js"
-yarn test
+yarn test # run all tests (run jest for all "*.test.js")
+yarn test:unit # run unit test
+yarn test:integration # run integration test
 
-yarn lint
+yarn lint # lint and format with eslint and prettier
 ```
 
 ## License
