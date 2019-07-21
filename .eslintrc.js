@@ -21,5 +21,9 @@ module.exports = {
     'consistent-return': 'off',
     'no-await-in-loop': 'off',
     'no-shadow': 'off',
+    'no-unused-vars': 'off',
+    'jest/expect-expect': 'off',
+    'jest/prefer-expect-assertions': 'off',
+    'jest/no-test-return-statement': 'off',
   },
-};
+}
