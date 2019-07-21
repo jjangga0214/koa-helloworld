@@ -2,11 +2,32 @@
   "name": "koa-helloworld",
   "version": "0.0.1",
   "description": "Demo of koa",
-  "main": "index.js",
-  "repository": "git@gitlab.com:jjangga0214/koa-helloworld.git",
-  "author": "Gil B. Chan",
   "license": "MIT",
   "private": true,
+  "keywords": [
+    "koa",
+    "koa2",
+    "koa-boilerplate",
+    "koa-helloworld",
+    "boilerplate",
+    "helloworld",
+    "scaffold",
+    "skeleton"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:jjangga0214/koa-helloworld.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/jjangga0214/node-boilerplate/issues"
+  },
+  "homepage": "https://gitlab.com/jjangga0214/koa-helloworld",
+  "author": {
+    "name": "Gil B. Chan",
+    "email": "bnbcmindnpass@gmail.com",
+    "url": "https://gitlab.com/jjangga0214"
+  },
   "engines": {
     "node": ">=8"
   },
