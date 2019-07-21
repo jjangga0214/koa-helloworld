@@ -1,5 +1,6 @@
 const Koa = require('koa')
 const morgan = require('koa-morgan')
+const helmet = require('koa-helmet')
 const koaBody = require('koa-body')
 const Router = require('koa-router')
 
@@ -7,15 +8,15 @@ const app = new Koa()
 const router = new Router()
 
 router
-  .get('/', async (ctx, next) => {
+  .get('/', async ctx => {
     // ctx.router available
     ctx.body = 'Hello World'
   })
-  .all('/reqBody', async (ctx, next) => {
+  .all('/reqBody', async ctx => {
     // ctx.router available
     ctx.body = `Request Body: ${JSON.stringify(ctx.request.body)}`
   })
-  .get('/something', async (ctx, next) => {
+  .get('/something', async ctx => {
     ctx.body = {
       something: 'something here',
     }
@@ -23,6 +24,7 @@ router
 
 app
   .use(morgan('combined'))
+  .use(helmet())
   .use(koaBody())
   .use(router.routes())
   .use(router.allowedMethods())
