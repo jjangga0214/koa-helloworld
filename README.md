@@ -10,21 +10,35 @@ Demo of koa.
 [![yarn:required](https://img.shields.io/badge/yarn-required-00207F.svg?style=flat-square&labelColor=black)](https://yarnpkg.com/en/)
 [![pr_welcome](https://img.shields.io/badge/PRs-welcome-08F7FE.svg?style=flat-square&labelColor=black)]()
 
+[![CircleCI](https://circleci.com/gh/jjangga0214/koa-helloworld.svg?style=svg)](https://circleci.com/gh/jjangga0214/koa-helloworld)
+
 ## Note
 
 Please read [NOTE.md](NOTE.md), before getting started.
 
 ## Getting started
 
+Install dependencies.
+
 ```bash
 yarn install
+```
+
+Copy and edit **.env** file as you want. Note that the server requires **.env** file, as it does not have any "default" values.
+
+```bash
+cp .env.example .env
+```
+
+Run the server. There is no command dedicated to dev stage (e.g. `yarn dev`). Both production and development stage use the same command.
+
+```bash
+yarn start
 ```
 
 ## Yarn scripts
 
 ```bash
-yarn start # start server with nodemon
-
 yarn test # run all tests (run jest for all "*.test.js")
 yarn test:unit # run unit test
 yarn test:integration # run integration test
