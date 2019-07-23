@@ -39,14 +39,14 @@ yarn start
 ## Yarn scripts
 
 ```bash
-yarn test # run all tests (run jest for all "*.test.js")
-yarn test:unit # run unit test
-yarn test:integration # run integration test
-yarn test:coverage # run all test and measure coverage
-yarn test:coverage:unit # run unit test and measure coverage
-yarn test:coverage:integration # run integration test and measure coverage
+yarn test # runs all tests (runs `jest` against "*.test.js")
+yarn test:unit # runs unit tests
+yarn test:integration # runs integration tests
+yarn test:coverage # runs all tests and measures coverage
+yarn test:coverage:unit # runs unit tests and measures coverage
+yarn test:coverage:integration # runs integration tests and measures coverage
 
-yarn lint # lint and format with eslint and prettier
+yarn lint # lints and formats with eslint and prettier
 ```
 
 ## License
