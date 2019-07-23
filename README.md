@@ -30,7 +30,7 @@ Copy and edit **.env** file as you want. Note that the server requires **.env** 
 cp .env.example .env
 ```
 
-Run the server. There is no command dedicated to dev stage (e.g. `yarn dev`). Both production and development stage use the same command.
+Run the server. There is no command dedicated to local development environment (e.g. `yarn dev`). Both production and development use the same command.
 
 ```bash
 yarn start
@@ -42,13 +42,12 @@ yarn start
 yarn test # run all tests (run jest for all "*.test.js")
 yarn test:unit # run unit test
 yarn test:integration # run integration test
+yarn test:coverage # run all test and measure coverage
+yarn test:coverage:unit # run unit test and measure coverage
+yarn test:coverage:integration # run integration test and measure coverage
 
 yarn lint # lint and format with eslint and prettier
 ```
-
-### start
-
-`yarn start` should be used both for local development and production. This is intentional. As it uses **nodemon** (a module like **pm2**, **forever**, etc), change of source code will be reflected automatically without restarting the server.
 
 ## License
 

@@ -14,7 +14,7 @@ Therefore this project only maintains _yarn.lock_, which **yarn** generates. Do 
 
 ### version
 
-The version of yarn should satisfy the condition specified on package.json's `engine.yarn` field.
+The version of yarn should satisfy the condition specified on package.json's `engines.yarn` field.
 
 ## module aliases
 

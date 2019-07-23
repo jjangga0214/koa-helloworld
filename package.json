@@ -36,7 +36,7 @@
   "scripts": {
     "postinstall": "link-module-alias",
     "lint": "eslint --fix .",
-    "test": "NODE_ENV=test dotenv -- jest",
+    "test": "dotenv -- jest",
     "test:unit": "yarn run test test/unit",
     "test:integration": "yarn run test test/integration",
     "test:coverage": "yarn run test --coverage",
