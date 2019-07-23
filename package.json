@@ -29,15 +29,19 @@
     "url": "https://gitlab.com/jjangga0214"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=8",
+    "yarn": ">=1"
   },
   "engineStrict": true,
   "scripts": {
     "postinstall": "link-module-alias",
     "lint": "eslint --fix .",
     "test": "NODE_ENV=test dotenv -- jest",
-    "test:unit": "NODE_ENV=test dotenv -- jest test/unit",
-    "test:integration": "NODE_ENV=test dotenv -- jest test/integration",
+    "test:unit": "yarn run test test/unit",
+    "test:integration": "yarn run test test/integration",
+    "test:coverage": "yarn run test --coverage",
+    "test:coverage:unit": "yarn run test:unit --coverage",
+    "test:coverage:integration": "yarn run test:integration --coverage",
     "start": "dotenv -- nodemon index.js"
   },
   "_moduleAliases": {
