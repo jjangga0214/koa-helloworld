@@ -2,6 +2,7 @@
 
 Demo of koa.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f602a8d2d2a4ba3bb9bab0695247ac6)](https://app.codacy.com/app/jjangga0214/koa-helloworld?utm_source=github.com&utm_medium=referral&utm_content=jjangga0214/koa-helloworld&utm_campaign=Badge_Grade_Dashboard)
 [![license](https://img.shields.io/badge/license-MIT-FF2281.svg?style=flat-square&labelColor=black)](./LICENSE)
 [![test](https://img.shields.io/badge/test-jest-001437.svg?style=flat-square&labelColor=black)]()
 [![code_style:airbnb](https://img.shields.io/badge/code_style-airbnb-F5D300.svg?style=flat-square&labelColor=black)](https://github.com/airbnb/javascript)
