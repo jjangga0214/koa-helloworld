@@ -2,7 +2,7 @@
 
 ## Node
 
-This project is tested only with node version specified in [.nvmrc](.nvmrc), though a mininum requirement version specified in package.json might differs. If not using node with the version of .nvmrc, you are taking your own risk.
+This project is tested only with node version specified in [.nvmrc](./.nvmrc), though a mininum requirement version specified in package.json might differs. If not using node with the version of .nvmrc, you are taking your own risk.
 
 ## Yarn
 
