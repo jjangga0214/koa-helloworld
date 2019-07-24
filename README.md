@@ -11,6 +11,7 @@ Demo of koa.
 [![pr_welcome](https://img.shields.io/badge/PRs-welcome-08F7FE.svg?style=flat-square&labelColor=black)]()
 
 [![CircleCI](https://circleci.com/gh/jjangga0214/koa-helloworld.svg?style=svg)](https://circleci.com/gh/jjangga0214/koa-helloworld)
+[![codecov](https://codecov.io/gh/jjangga0214/koa-helloworld/branch/master/graph/badge.svg?style=flat-square&labelColor=black)](https://codecov.io/gh/jjangga0214/koa-helloworld)
 
 ## Note
 
