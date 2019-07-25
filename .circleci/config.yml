@@ -43,14 +43,14 @@ jobs:
           root: .
           # Must be relative path from root
           paths:
-            - ./node_modules
+            - .
 
   lint:
     executor: executor # refer from registered executors
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: ./node_modules
+          at: .
       # run tests and measure coverage!
       - run: yarn lint:ci
       - store_test_results:
@@ -61,7 +61,7 @@ jobs:
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: ./node_modules
+          at: .
       # run tests and measure coverage!
       - run: yarn test:coverage --ci
       - store_artifacts:
@@ -75,7 +75,7 @@ jobs:
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: ./node_modules
+          at: .
       # run tests and measure coverage!
       - run: yarn test:coverage:unit --ci
       - store_artifacts:
@@ -91,7 +91,7 @@ jobs:
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: ./node_modules
+          at: .
       # run tests and measure coverage!
       - run: yarn test:coverage:integration --ci
       - store_artifacts:
