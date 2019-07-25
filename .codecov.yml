@@ -1,0 +1,26 @@
+coverage:
+  parsers:
+    javascript:
+      enable_partials: yes
+  status:
+    project:
+      default: off
+      backend:
+        flags: backend
+        target: 50%
+      backend-unit:
+        flags: backend_unit
+        target: 65%
+      backend-integration:
+        flags: backend_integration
+
+flags:
+  backend:
+    paths:
+      - src/
+  backend_unit:
+    paths:
+      - src/
+  backend_integration:
+    paths:
+      - src/

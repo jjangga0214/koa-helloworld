@@ -5,10 +5,10 @@
 version: 2.1
 
 orbs:
-  codecov: codecov/codecov@1.0.2
+  codecov: codecov/codecov@1.0.5
 
 jobs:
-  build:
+  test:
     docker:
       # specify the version you desire here
       - image: circleci/node:12
@@ -37,12 +37,35 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      - run: yarn lint:ci
+
+      - store_test_results:
+          path: reports
+
       # run tests!
-      - run: yarn test:coverage
+      - run: yarn test:coverage --ci
+      - run: yarn test:unit --ci
+      - run: yarn test:integration --ci
 
       - store_artifacts:
           path: coverage
+      - store_artifacts:
+          path: coverage-unit
+      - store_artifacts:
+          path: coverage-integration
 
       - codecov/upload:
           file: coverage/*.json
           flags: backend
+      - codecov/upload:
+          file: coverage-unit/*.json
+          flags: backend_unit
+      - codecov/upload:
+          file: coverage-integration/*.json
+          flags: backend_integration
+
+workflows:
+  version: 2.1
+  test: # name this as you want
+    jobs:
+      - test
