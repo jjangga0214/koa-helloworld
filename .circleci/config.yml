@@ -88,12 +88,12 @@ workflows:
     jobs:
       - lint
       - test:
-        requires:
-          - lint # wait for lint job to complete successfully before starting
+          requires:
+            - lint # wait for lint job to complete successfully before starting
           # see circleci.com/docs/2.0/workflows/ for more examples.
       - test-unit:
-        requires:
-          - lint
+          requires:
+            - lint
       - test-integration:
-        requires:
-          - lint
+          requires:
+            - lint
