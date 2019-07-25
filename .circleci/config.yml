@@ -59,10 +59,10 @@ jobs:
           flags: backend
       - codecov/upload:
           file: coverage-unit/*.json
-          flags: backend:unit
+          flags: backend-unit
       - codecov/upload:
           file: coverage-integration/*.json
-          flags: backend:integration
+          flags: backend-integration
 
 workflows:
   version: 2.1
