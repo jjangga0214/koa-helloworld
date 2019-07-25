@@ -11,4 +11,8 @@ describe('adder', () => {
     expect(add('-1 -4 2')).toStrictEqual(-3)
     expect(add('+2 -7')).toStrictEqual(-5)
   })
+  it('failing test', () => {
+    expect.hasAssertions()
+    expect(add('1')).toStrictEqual(0)
+  })
 })
