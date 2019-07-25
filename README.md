@@ -12,7 +12,7 @@ Demo of koa.
 
 [![CircleCI](https://circleci.com/gh/jjangga0214/koa-helloworld.svg?style=svg)](https://circleci.com/gh/jjangga0214/koa-helloworld)
 [![codecov](https://codecov.io/gh/jjangga0214/koa-helloworld/branch/master/graph/badge.svg?style=flat-square&labelColor=black)](https://codecov.io/gh/jjangga0214/koa-helloworld)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f602a8d2d2a4ba3bb9bab0695247ac6)](https://app.codacy.com/app/jjangga0214/koa-helloworld?utm_source=github.com&utm_medium=referral&utm_content=jjangga0214/koa-helloworld&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f602a8d2d2a4ba3bb9bab0695247ac6)](https://app.codacy.com/app/jjangga0214/koa-helloworld?utm_source=github.com&utm_medium=referral&utm_content=jjangga0214/koa-helloworld&utm_campaign=Badge_Grade_Dashboard) [![Greenkeeper badge](https://badges.greenkeeper.io/jjangga0214/koa-helloworld.svg)](https://greenkeeper.io/)
 
 ## Note
 
