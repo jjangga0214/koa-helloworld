@@ -45,7 +45,7 @@ jobs:
       # run tests!
       - run: yarn test:coverage --ci
       - run: yarn test:unit --ci
-      - run: yarn test:integraion --ci
+      - run: yarn test:integration --ci
 
       - store_artifacts:
           path: coverage
@@ -57,8 +57,8 @@ jobs:
           file: coverage/unit/*.json
           flags: backend:unit
       - codecov/upload:
-          file: coverage/integraion/*.json
-          flags: backend:integraion
+          file: coverage/integration/*.json
+          flags: backend:integration
 
 workflows:
   version: 2.1
