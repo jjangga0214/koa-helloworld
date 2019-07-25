@@ -7,16 +7,19 @@ version: 2.1
 orbs:
   codecov: codecov/codecov@1.0.5
 
-jobs:
-  lint:
+executors:
+  executor: # name it as you want
     docker:
       - image: circleci/node:12
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
-
     working_directory: ~/repo
+
+jobs:
+  lint:
+    executor: executor # refer from registered executors
 
     steps:
       - checkout
@@ -33,18 +36,27 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 
+      # Persist the specified paths into the workspace for use in downstream job.
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory. This is a directory on the container which is
+          # taken to be the root directory of the workspace.
+          root: .
+          # Must be relative path from root
+          paths:
+            - ./node_modules
+
       - run: yarn lint:ci
 
       - store_test_results:
           path: reports
+
   test:
-    docker:
-      - image: circleci/node:12
-    working_directory: ~/repo
+    executor: executor # refer from registered executors
     steps:
-      - restore_cache: # Restores the cached dependency.
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
-      # run tests!
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ./node_modules
+      # run tests and measure coverage!
       - run: yarn test:coverage --ci
       - store_artifacts:
           path: coverage
@@ -53,13 +65,12 @@ jobs:
           flags: backend
 
   test-unit:
-    docker:
-      - image: circleci/node:12
-    working_directory: ~/repo
+    executor: executor # refer from registered executors
     steps:
-      - restore_cache: # Restores the cached dependency.
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
-      # run tests!
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ./node_modules
+      # run tests and measure coverage!
       - run: yarn test:coverage:unit --ci
       - store_artifacts:
           path: coverage-unit
@@ -72,9 +83,10 @@ jobs:
       - image: circleci/node:12
     working_directory: ~/repo
     steps:
-      - restore_cache: # Restores the cached dependency.
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
-      # run tests!
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ./node_modules
+      # run tests and measure coverage!
       - run: yarn test:coverage:integration --ci
       - store_artifacts:
           path: coverage-integration
