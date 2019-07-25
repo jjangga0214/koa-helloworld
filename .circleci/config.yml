@@ -37,6 +37,11 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      - run: yarn lint:ci
+
+      - store_reports:
+          path: reports
+
       # run tests!
       - run: yarn test:coverage
 
