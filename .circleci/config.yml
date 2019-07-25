@@ -8,11 +8,9 @@ orbs:
   codecov: codecov/codecov@1.0.5
 
 jobs:
-  test:
+  lint:
     docker:
-      # specify the version you desire here
       - image: circleci/node:12
-
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -22,44 +20,64 @@ jobs:
 
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-{{ checksum "yarn.lock" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-
       - run: yarn install
 
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
 
       - run: yarn lint:ci
 
       - store_test_results:
           path: reports
-
+  test:
+    docker:
+      - image: circleci/node:12
+    working_directory: ~/repo
+    steps:
+      - restore_cache: # Restores the cached dependency.
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
       # run tests!
       - run: yarn test:coverage --ci
-      - run: yarn test:unit --ci
-      - run: yarn test:integration --ci
-
       - store_artifacts:
           path: coverage
-      - store_artifacts:
-          path: coverage-unit
-      - store_artifacts:
-          path: coverage-integration
-
       - codecov/upload:
           file: coverage/*.json
           flags: backend
+
+  test-unit:
+    docker:
+      - image: circleci/node:12
+    working_directory: ~/repo
+    steps:
+      - restore_cache: # Restores the cached dependency.
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+      # run tests!
+      - run: yarn test:coverage:unit --ci
+      - store_artifacts:
+          path: coverage-unit
       - codecov/upload:
           file: coverage-unit/*.json
           flags: backend_unit
+
+  test-integration:
+    docker:
+      - image: circleci/node:12
+    working_directory: ~/repo
+    steps:
+      - restore_cache: # Restores the cached dependency.
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+      # run tests!
+      - run: yarn test:coverage:integration --ci
+      - store_artifacts:
+          path: coverage-integration
       - codecov/upload:
           file: coverage-integration/*.json
           flags: backend_integration
@@ -68,4 +86,14 @@ workflows:
   version: 2.1
   test: # name this as you want
     jobs:
-      - test
+      - lint
+      - test:
+        requires:
+          - lint # wait for lint job to complete successfully before starting
+          # see circleci.com/docs/2.0/workflows/ for more examples.
+      - test-unit:
+        requires:
+          - lint
+      - test-integration:
+        requires:
+          - lint
