@@ -13,6 +13,7 @@ coverage:
         target: 65%
       backend-integration:
         flags: backend_integration
+        target: 40%
 
 flags:
   backend:
