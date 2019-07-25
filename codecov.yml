@@ -1,0 +1,23 @@
+coverage:
+  status:
+    project:
+      default: off
+      backend:
+        flags: backend
+        target: 50%
+      backend:unit:
+        flags: backend:unit
+        target: 65%
+      backend:integration:
+        flags: integration
+
+flags:
+  backend:
+    paths:
+      - src/
+  backend:unit:
+    paths:
+      - src/
+  backend:integration:
+    paths:
+      - src/
