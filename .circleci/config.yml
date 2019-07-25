@@ -18,7 +18,7 @@ executors:
     working_directory: ~/repo
 
 jobs:
-  lint:
+  install:
     executor: executor # refer from registered executors
 
     steps:
@@ -45,8 +45,14 @@ jobs:
           paths:
             - ./node_modules
 
+  lint:
+    executor: executor # refer from registered executors
+    steps:
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ./node_modules
+      # run tests and measure coverage!
       - run: yarn lint:ci
-
       - store_test_results:
           path: reports
 
@@ -98,11 +104,14 @@ workflows:
   version: 2.1
   test: # name this as you want
     jobs:
-      - lint
+      - install
+      - lint:
+          requires:
+            - install # wait for lint job to complete successfully before starting
+          # see circleci.com/docs/2.0/workflows/ for more examples.
       - test:
           requires:
-            - lint # wait for lint job to complete successfully before starting
-          # see circleci.com/docs/2.0/workflows/ for more examples.
+            - lint
       - test-unit:
           requires:
             - lint
