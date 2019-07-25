@@ -8,13 +8,13 @@ describe('routes', () => {
   it(' GET /', () => {
     return request.get('/').expect(200)
   })
-  it(' POST /hi', () => {
+  it(' POST /add', () => {
     const name = 'hello world'
     return request
-      .post('/hi')
-      .send({ name })
+      .post('/add')
+      .send({ numbers: '1 2 -4 5' })
       .expect(200)
-      .expect(`Hi, ${name}`)
+      .expect({ result: 4 })
   })
   it(' GET /this-is-json', () => {
     return request

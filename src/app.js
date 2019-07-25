@@ -6,13 +6,16 @@ const Router = require('koa-router')
 
 const app = new Koa()
 const router = new Router()
+const { add } = require('#/adder')
 
 router
   .get('/', async ctx => {
     ctx.body = 'Hello World'
   })
-  .post('/hi', async ctx => {
-    ctx.body = `Hi, ${ctx.request.body.name}`
+  .post('/add', async ctx => {
+    ctx.body = {
+      result: add(ctx.request.body.numbers),
+    }
   })
   .get('/this-is-json', async ctx => {
     ctx.body = {

@@ -41,8 +41,8 @@
     "test:unit": "yarn run test test/unit",
     "test:integration": "yarn run test test/integration",
     "test:coverage": "yarn run test --coverage",
-    "test:coverage:unit": "yarn run test:unit --coverage --coverageDirectory ./coverage/unit",
-    "test:coverage:integration": "yarn run test:integration --coverage --coverageDirectory ./coverage/integration",
+    "test:coverage:unit": "yarn run test:unit --coverage --coverageDirectory ./coverage-unit",
+    "test:coverage:integration": "yarn run test:integration --coverage --coverageDirectory ./coverage-integration",
     "start": "dotenv -- nodemon index.js"
   },
   "_moduleAliases": {

@@ -54,10 +54,10 @@ jobs:
           file: coverage/*.json
           flags: backend
       - codecov/upload:
-          file: coverage/unit/*.json
+          file: coverage-unit/*.json
           flags: backend:unit
       - codecov/upload:
-          file: coverage/integration/*.json
+          file: coverage-integration/*.json
           flags: backend:integration
 
 workflows:
