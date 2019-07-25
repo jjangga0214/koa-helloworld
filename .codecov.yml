@@ -9,18 +9,18 @@ coverage:
         flags: backend
         target: 50%
       backend-unit:
-        flags: backend-unit
+        flags: backend_unit
         target: 65%
       backend-integration:
-        flags: backend-integration
+        flags: backend_integration
 
 flags:
   backend:
     paths:
       - src/
-  backend-unit:
+  backend_unit:
     paths:
       - src/
-  backend-integration:
+  backend_integration:
     paths:
       - src/
