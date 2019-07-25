@@ -8,7 +8,7 @@ orbs:
   codecov: codecov/codecov@1.0.2
 
 jobs:
-  build:
+  test:
     docker:
       # specify the version you desire here
       - image: circleci/node:12
@@ -39,11 +39,13 @@ jobs:
 
       - run: yarn lint:ci
 
-      - store_reports:
+      - store_test_results:
           path: reports
 
       # run tests!
-      - run: yarn test:coverage
+      - run: yarn test:coverage --ci
+      - run: yarn test:unit --ci
+      - run: yarn test:integraion --ci
 
       - store_artifacts:
           path: coverage
@@ -51,3 +53,15 @@ jobs:
       - codecov/upload:
           file: coverage/*.json
           flags: backend
+      - codecov/upload:
+          file: coverage/unit/*.json
+          flags: backend:unit
+      - codecov/upload:
+          file: coverage/integraion/*.json
+          flags: backend:integraion
+
+workflows:
+  version: 2.1
+  test: # name this as you want
+    jobs:
+      - test
