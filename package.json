@@ -77,11 +77,11 @@
   },
   "lint-staged": {
     "*.js": [
-      "yarn run lint",
+      "yarn run lint:js",
       "git add"
     ],
     "*.md": [
-      "yarn run lint",
+      "yarn run lint:md",
       "git add"
     ]
   },
