@@ -12,7 +12,10 @@ Demo of koa.
 
 [![CircleCI](https://circleci.com/gh/jjangga0214/koa-helloworld.svg?style=svg)](https://circleci.com/gh/jjangga0214/koa-helloworld)
 [![codecov](https://codecov.io/gh/jjangga0214/koa-helloworld/branch/master/graph/badge.svg?style=flat-square&labelColor=black)](https://codecov.io/gh/jjangga0214/koa-helloworld)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f602a8d2d2a4ba3bb9bab0695247ac6)](https://app.codacy.com/app/jjangga0214/koa-helloworld?utm_source=github.com&utm_medium=referral&utm_content=jjangga0214/koa-helloworld&utm_campaign=Badge_Grade_Dashboard) [![Greenkeeper badge](https://badges.greenkeeper.io/jjangga0214/koa-helloworld.svg)](https://greenkeeper.io/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f602a8d2d2a4ba3bb9bab0695247ac6)](https://app.codacy.com/app/jjangga0214/koa-helloworld?utm_source=github.com&utm_medium=referral&utm_content=jjangga0214/koa-helloworld&utm_campaign=Badge_Grade_Dashboard)
+[![codebeat badge](https://codebeat.co/badges/e8c4d4c3-8c45-4a6b-83b4-457007ac6bf0)](https://codebeat.co/projects/github-com-jjangga0214-koa-helloworld-master)
+[![DeepScan grade](https://deepscan.io/api/teams/4834/projects/6595/branches/55635/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=4834&pid=6595&bid=55635)
+[![Greenkeeper badge](https://badges.greenkeeper.io/jjangga0214/koa-helloworld.svg)](https://greenkeeper.io/)
 
 ## Note
 
