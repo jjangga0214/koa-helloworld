@@ -19,7 +19,6 @@ module.exports = {
     'no-restricted-syntax': 'off',
     'no-await-in-loop': 'off',
     'consistent-return': 'off',
-    'no-await-in-loop': 'off',
     'no-shadow': 'off',
     'no-unused-vars': 'off',
     'jest/expect-expect': 'off',
