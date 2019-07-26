@@ -5,7 +5,7 @@ module.exports = {
     es6: true,
     'jest/globals': true,
   },
-  plugins: ['prettier', 'jest'],
+  plugins: ['prettier', 'jest', 'markdown'],
   extends: ['airbnb-base', 'prettier', 'plugin:jest/all'],
   rules: {
     'prettier/prettier': 'error',

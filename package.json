@@ -35,8 +35,8 @@
   "engineStrict": true,
   "scripts": {
     "postinstall": "link-module-alias",
-    "lint": "eslint --fix .",
-    "lint:ci": "eslint . --format junit --output-file ./reports/eslint.xml",
+    "lint": "eslint --fix . --ext js --ext md",
+    "lint:ci": "eslint . --ext js --ext md --format junit --output-file ./reports/eslint.xml",
     "test": "dotenv -- jest",
     "test:unit": "yarn run test test/unit",
     "test:integration": "yarn run test test/integration",
@@ -55,6 +55,7 @@
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jest": "^22.9.0",
+    "eslint-plugin-markdown": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "husky": ">=1",
     "jest": "^24.8.0",
@@ -71,8 +72,8 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
+    "{*.js, *.md}": [
+      "yarn run lint",
       "git add"
     ]
   },
