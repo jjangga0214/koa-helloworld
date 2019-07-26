@@ -9,7 +9,6 @@ describe('routes', () => {
     return request.get('/').expect(200)
   })
   it(' POST /add', () => {
-    const name = 'hello world'
     return request
       .post('/add')
       .send({ numbers: '1 2 -4 5' })
