@@ -5,9 +5,6 @@ coverage:
   status:
     project:
       default: off
-      backend:
-        flags: backend
-        target: 50%
       backend-unit:
         flags: backend_unit
         target: 65%
@@ -16,9 +13,6 @@ coverage:
         target: 40%
 
 flags:
-  backend:
-    paths:
-      - src/
   backend_unit:
     paths:
       - src/

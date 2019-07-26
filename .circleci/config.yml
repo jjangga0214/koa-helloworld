@@ -56,20 +56,6 @@ jobs:
       - store_test_results:
           path: reports
 
-  test:
-    executor: executor # refer from registered executors
-    steps:
-      - attach_workspace:
-          # Must be absolute path or relative path from working_directory
-          at: .
-      # run tests and measure coverage!
-      - run: yarn test:coverage --ci
-      - store_artifacts:
-          path: coverage
-      - codecov/upload:
-          file: coverage/*.json
-          flags: backend
-
   test-unit:
     executor: executor # refer from registered executors
     steps:
@@ -85,9 +71,7 @@ jobs:
           flags: backend_unit
 
   test-integration:
-    docker:
-      - image: circleci/node:12
-    working_directory: ~/repo
+    executor: executor # refer from registered executors
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
@@ -109,9 +93,6 @@ workflows:
           requires:
             - install # wait for lint job to complete successfully before starting
           # see circleci.com/docs/2.0/workflows/ for more examples.
-      - test:
-          requires:
-            - lint
       - test-unit:
           requires:
             - lint
