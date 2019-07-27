@@ -22,11 +22,6 @@ Demo of koa.
 
 Please read [NOTE.md](./NOTE.md), before getting started.
 
-```js
-console.log();
-;('');
-```
-
 ## Getting started
 
 Install dependencies.

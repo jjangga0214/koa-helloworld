@@ -14,7 +14,7 @@ module.exports = {
     'jest/no-identical-title': 'error',
     'jest/prefer-to-have-length': 'warn',
     'jest/valid-expect': 'error',
-    'no-console': 'off',
+    // 'no-console': 'off',
     'no-iterator': 'off',
     'no-restricted-syntax': 'off',
     'no-await-in-loop': 'off',
