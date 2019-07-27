@@ -18,9 +18,14 @@ Demo of koa.
 [![CodeFactor](https://www.codefactor.io/repository/github/jjangga0214/koa-helloworld/badge)](https://www.codefactor.io/repository/github/jjangga0214/koa-helloworld)
 [![Greenkeeper badge](https://badges.greenkeeper.io/jjangga0214/koa-helloworld.svg)](https://greenkeeper.io/)
 
-## Note 
+## Note
 
 Please read [NOTE.md](./NOTE.md), before getting started.
+
+```js
+console.log();
+;('');
+```
 
 ## Getting started
 
