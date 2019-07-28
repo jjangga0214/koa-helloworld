@@ -8,6 +8,7 @@ Demo of koa.
 [![code_style:prettier](https://img.shields.io/badge/code_style-prettier-FFACFC.svg?style=flat-square&labelColor=black)](https://prettier.io/)
 [![.nvmrc](https://img.shields.io/badge/.nvmrc-12-09FF33.svg?style=flat-square&labelColor=black)]()
 [![yarn:required](https://img.shields.io/badge/yarn-required-00207F.svg?style=flat-square&labelColor=black)](https://yarnpkg.com/en/)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-cz_conventional_changelog-brightgreen.svg?style=flat-square&labelColor=black)](http://commitizen.github.io/cz-cli/)
 [![pr_welcome](https://img.shields.io/badge/PRs-welcome-08F7FE.svg?style=flat-square&labelColor=black)]()
 
 [![CircleCI](https://circleci.com/gh/jjangga0214/koa-helloworld.svg?style=svg)](https://circleci.com/gh/jjangga0214/koa-helloworld)

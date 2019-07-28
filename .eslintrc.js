@@ -14,6 +14,9 @@ module.exports = {
     'jest/no-identical-title': 'error',
     'jest/prefer-to-have-length': 'warn',
     'jest/valid-expect': 'error',
+    'jest/expect-expect': 'off',
+    'jest/prefer-expect-assertions': 'off',
+    'jest/no-test-return-statement': 'off',
     'no-console': 'off',
     'no-iterator': 'off',
     'no-restricted-syntax': 'off',
@@ -21,8 +24,5 @@ module.exports = {
     'consistent-return': 'off',
     'no-shadow': 'off',
     'no-unused-vars': 'off',
-    'jest/expect-expect': 'off',
-    'jest/prefer-expect-assertions': 'off',
-    'jest/no-test-return-statement': 'off',
   },
 }

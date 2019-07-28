@@ -36,10 +36,12 @@
   "scripts": {
     "postinstall": "link-module-alias",
     "lint": "yarn run lint:js && yarn run lint:md",
-    "lint:js": "eslint --fix . --ext js --ext md",
-    "lint:md": "markdownlint . --ignore ./node_modules --ignore ./git",
-    "lint:ci": "yarn run lint:ci:js && yarn run lint:md",
-    "lint:ci:js": "eslint . --ext js --ext md --format junit --output-file ./reports/eslint.xml",
+    "lint:js": "eslint --fix --ext js --ext md",
+    "lint:js:all": "yarn run lint:js .",
+    "lint:md": "markdownlint --ignore ./node_modules --ignore ./git",
+    "lint:md:all": "yarn run lint:md .",
+    "lint:ci": "yarn run lint:ci:js:all && yarn run lint:md:all",
+    "lint:ci:js:all": "eslint . --ext js --ext md --format junit --output-file ./reports/eslint.xml",
     "test": "dotenv -- jest",
     "test:unit": "yarn run test test/unit",
     "test:integration": "yarn run test test/integration",
@@ -53,6 +55,10 @@
     "#": "src"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
     "eslint": "5.3.0",
     "eslint-config-airbnb-base": "13.2.0",
     "eslint-config-prettier": "^6.0.0",
@@ -60,7 +66,7 @@
     "eslint-plugin-jest": "^22.9.0",
     "eslint-plugin-markdown": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "husky": ">=1",
+    "husky": ">= 1",
     "jest": "^24.8.0",
     "link-module-alias": "^1.2.0",
     "lint-staged": ">=8",
@@ -72,16 +78,18 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
     "*.js": [
-      "yarn run lint",
+      "yarn run lint:js",
       "git add"
     ],
     "*.md": [
-      "yarn run lint",
+      "yarn run lint:md",
       "git add"
     ]
   },
@@ -92,5 +100,17 @@
     "koa-helmet": "^4.2.0",
     "koa-morgan": "^1.0.1",
     "koa-router": "^7.4.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "maxHeaderWidth": 100,
+      "maxLineWidth": 100,
+      "defaultType": "",
+      "defaultScope": "",
+      "defaultSubject": "",
+      "defaultBody": "",
+      "defaultIssues": ""
+    }
   }
 }
