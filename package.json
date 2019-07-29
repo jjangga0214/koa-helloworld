@@ -34,6 +34,7 @@
   },
   "engineStrict": true,
   "scripts": {
+    "husky-skip":"HUSKY_SKIP_HOOKS=1",
     "postinstall": "link-module-alias",
     "lint": "yarn run lint:js && yarn run lint:md",
     "lint:js": "eslint --fix --ext js --ext md",
