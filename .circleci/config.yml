@@ -52,10 +52,10 @@ jobs:
           # Must be absolute path or relative path from working_directory
           at: .
       # run tests and measure coverage!
-      - run: 
-        command: |
-        yarn lint:js:pure . --format junit --output-file ./reports/backend-lint.xml
-        yarn lint:md:all
+      - run:
+          command: |
+            yarn lint:js:pure . --format junit --output-file ./reports/backend-lint.xml
+            yarn lint:md:all
       - store_test_results:
           path: reports
 
@@ -66,10 +66,10 @@ jobs:
           # Must be absolute path or relative path from working_directory
           at: .
       - run:
-        command: |
-        yarn test:ci:common \
-        --coverageDirectory ./reports/backend-unit-coverage \
-        test/unit
+          command: |
+            yarn test:ci:common \
+            --coverageDirectory ./reports/backend-unit-coverage \
+            test/unit
         environment:
           JEST_JUNIT_OUTPUT: 'reports/backend-unit.xml'
       - store_test_results:
@@ -87,10 +87,10 @@ jobs:
           # Must be absolute path or relative path from working_directory
           at: .
       - run:
-        command: |
-        yarn test:ci:common \
-        --coverageDirectory ./reports/backend-integration-coverage \
-        test/integration
+          command: |
+            yarn test:ci:common \
+            --coverageDirectory ./reports/backend-integration-coverage \
+            test/integration
         environment:
           JEST_JUNIT_OUTPUT: 'reports/backend-integration.xml'
       - store_test_results:
