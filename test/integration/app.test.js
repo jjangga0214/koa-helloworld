@@ -18,7 +18,7 @@ describe('routes', () => {
   it(' GET /this-is-json', () => {
     return request
       .get('/this-is-json')
-      .expect(200)
+      .expect(201)
       .expect({
         'this-is-key': 'this-is-value',
       })
