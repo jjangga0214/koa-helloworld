@@ -22,4 +22,4 @@ The version of yarn should satisfy the condition specified on package.json's `en
 
 ## Test
 
-[**jest**](https://jestjs.io/) is used as test runner.
+[**jest**](https://jestjs.io/) is used as test runner.  
