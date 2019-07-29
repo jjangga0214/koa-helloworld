@@ -18,7 +18,7 @@ executors:
     working_directory: ~/repo
 
 jobs:
-  install:
+  backend-install:
     executor: executor # refer from registered executors
 
     steps:
@@ -45,57 +45,74 @@ jobs:
           paths:
             - .
 
-  lint:
+  backend-lint:
     executor: executor # refer from registered executors
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: .
       # run tests and measure coverage!
-      - run: yarn lint:ci
+      - run: 
+        command: |
+        yarn lint:js:pure . --format junit --output-file ./reports/backend-lint.xml
+        yarn lint:md:all
       - store_test_results:
           path: reports
 
-  test-unit:
+  backend-unit:
     executor: executor # refer from registered executors
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: .
-      # run tests and measure coverage!
-      - run: yarn test:unit:coverage:ci
-      - store_artifacts:
-          path: coverage-unit
+      - run:
+        command: |
+        yarn test:ci:common \
+        --coverageDirectory ./reports/backend-unit-coverage \
+        test/unit
+        environment:
+          JEST_JUNIT_OUTPUT: 'reports/backend-unit.xml'
+      - store_test_results:
+          path: reports
+      # - store_artifacts:
+      #     path: reports
       - codecov/upload:
-          file: coverage-unit/*.json
+          file: reports/backend-unit-coverage/*.json
           flags: backend_unit
 
-  test-integration:
+  backend-integration:
     executor: executor # refer from registered executors
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: .
-      # run tests and measure coverage!
-      - run: yarn test:integration:coverage:ci
-      - store_artifacts:
-          path: coverage-integration
+      - run:
+        command: |
+        yarn test:ci:common \
+        --coverageDirectory ./reports/backend-integration-coverage \
+        test/integration
+        environment:
+          JEST_JUNIT_OUTPUT: 'reports/backend-integration.xml'
+      - store_test_results:
+          path: reports
+      # - store_artifacts:
+      #     path: reports
       - codecov/upload:
-          file: coverage-integration/*.json
+          file: reports/backend-integration-coverage/*.json
           flags: backend_integration
 
 workflows:
   version: 2.1
-  test: # name this as you want
+  backend: # name this as you want
     jobs:
-      - install
-      - lint:
+      - backend-install
+      - backend-lint:
           requires:
-            - install # wait for lint job to complete successfully before starting
+            - backend-install # wait for lint job to complete successfully before starting
           # see circleci.com/docs/2.0/workflows/ for more examples.
-      - test-unit:
+      - backend-unit:
           requires:
-            - lint
-      - test-integration:
+            - backend-lint
+      - backend-integration:
           requires:
-            - lint
+            - backend-lint

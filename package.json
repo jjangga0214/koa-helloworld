@@ -36,22 +36,19 @@
   "scripts": {
     "husky-skip": "HUSKY_SKIP_HOOKS=1",
     "postinstall": "link-module-alias",
-    "lint": "yarn run lint:js:all && yarn run lint:md:all",
-    "lint:js": "eslint --fix --ext js --ext md",
-    "lint:js:all": "yarn run lint:js .",
+    "lint": "yarn lint:js:all && yarn lint:md:all",
+    "lint:js:all": "yarn lint:js .",
+    "lint:js": "yarn lint:js:pure --fix",
+    "lint:js:pure": "eslint --ext js --ext md",
+    "lint:md:all": "yarn lint:md .",
     "lint:md": "markdownlint --ignore ./node_modules --ignore ./git",
-    "lint:md:all": "yarn run lint:md .",
-    "lint:ci": "yarn run lint:js:all:ci && yarn run lint:md:all",
-    "lint:js:all:ci": "eslint . --ext js --ext md --format junit --output-file ./reports/eslint.xml",
     "test": "dotenv -- jest",
-    "test:unit": "yarn run test test/unit",
-    "test:integration": "yarn run test test/integration",
-    "test:coverage": "yarn run test --coverage",
-    "test:unit:coverage": "yarn run test:unit --coverage",
-    "test:integration:coverage": "yarn run test:integration --coverage",
-    "test:coverage:ci": "yarn run test:coverage --ci",
-    "test:unit:coverage:ci": "yarn run test:unit:coverage --ci --coverageDirectory ./coverage-unit",
-    "test:integration:coverage:ci": "yarn run test:integration:coverage --ci --coverage --coverageDirectory ./coverage-integration",
+    "test:unit": "yarn test test/unit",
+    "test:integration": "yarn test test/integration",
+    "test:coverage": "yarn test --coverage",
+    "test:unit:coverage": "yarn test:coverage test/unit",
+    "test:integration:coverage": "yarn run test:coverage test/integration",
+    "test:ci:common": "yarn test:coverage --ci --reporters='default' --reporters='jest-junit'",
     "start": "dotenv -- nodemon index.js"
   },
   "_moduleAliases": {
@@ -89,11 +86,11 @@
   },
   "lint-staged": {
     "*.js": [
-      "yarn run lint:js",
+      "yarn lint:js",
       "git add"
     ],
     "*.md": [
-      "yarn run lint:md",
+      "yarn lint:md",
       "git add"
     ]
   },
