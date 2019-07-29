@@ -70,8 +70,8 @@ jobs:
             yarn test:ci:common \
             --coverageDirectory ./reports/backend-unit-coverage \
             test/unit
-        environment:
-          JEST_JUNIT_OUTPUT: 'reports/backend-unit.xml'
+          environment:
+            JEST_JUNIT_OUTPUT: 'reports/backend-unit.xml'
       - store_test_results:
           path: reports
       # - store_artifacts:
@@ -91,8 +91,8 @@ jobs:
             yarn test:ci:common \
             --coverageDirectory ./reports/backend-integration-coverage \
             test/integration
-        environment:
-          JEST_JUNIT_OUTPUT: 'reports/backend-integration.xml'
+          environment:
+            JEST_JUNIT_OUTPUT: 'reports/backend-integration.xml'
       - store_test_results:
           path: reports
       # - store_artifacts:
