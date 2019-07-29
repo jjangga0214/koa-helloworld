@@ -63,7 +63,7 @@ jobs:
           # Must be absolute path or relative path from working_directory
           at: .
       # run tests and measure coverage!
-      - run: yarn test:coverage:unit --ci
+      - run: yarn test:unit:coverage:ci
       - store_artifacts:
           path: coverage-unit
       - codecov/upload:
@@ -77,7 +77,7 @@ jobs:
           # Must be absolute path or relative path from working_directory
           at: .
       # run tests and measure coverage!
-      - run: yarn test:coverage:integration --ci
+      - run: yarn test:integration:coverage:ci
       - store_artifacts:
           path: coverage-integration
       - codecov/upload:

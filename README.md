@@ -50,11 +50,10 @@ yarn test # runs all tests (runs `jest` against "*.test.js")
 yarn test:unit # runs unit tests
 yarn test:integration # runs integration tests
 yarn test:coverage # runs all tests and measures coverage
-yarn test:coverage:unit # runs unit tests and measures coverage
-yarn test:coverage:integration # runs integration tests and measures coverage
+yarn test:unit:coverage # runs unit tests and measures coverage
+yarn test:integration:coverage # runs integration tests and measures coverage
 
 yarn lint # lints and formats with eslint and prettier
-yarn lint:ci # only checks lint rules without formatting. Then make report
 ```
 
 ## License
