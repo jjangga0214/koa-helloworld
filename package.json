@@ -48,7 +48,7 @@
     "test:coverage": "yarn test --coverage",
     "test:unit:coverage": "yarn test:coverage test/unit",
     "test:integration:coverage": "yarn run test:coverage test/integration",
-    "test:ci:common": "yarn test:coverage --ci --reporters='default' --reporters='jest-junit'",
+    "test:ci:common": "yarn test:coverage --ci --reporters='jest-junit'",
     "start": "dotenv -- nodemon index.js"
   },
   "_moduleAliases": {
