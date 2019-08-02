@@ -34,6 +34,7 @@
   },
   "engineStrict": true,
   "scripts": {
+    "release": "HUSKY_SKIP_HOOKS=1 standard-version",
     "husky-skip": "HUSKY_SKIP_HOOKS=1",
     "postinstall": "link-module-alias",
     "lint": "yarn lint:js:all && yarn lint:md:all",
@@ -76,6 +77,7 @@
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
+    "standard-version": "^7.0.0",
     "supertest": "^4.0.2"
   },
   "husky": {
