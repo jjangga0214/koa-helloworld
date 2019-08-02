@@ -29,7 +29,7 @@
     "url": "https://gitlab.com/jjangga0214"
   },
   "engines": {
-    "node": ">=8",
+    "node": ">=10",
     "yarn": ">=1"
   },
   "engineStrict": true,
