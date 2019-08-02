@@ -42,7 +42,7 @@
     "lint:js": "yarn lint:js:pure --fix",
     "lint:js:pure": "eslint --ext js --ext md",
     "lint:md:all": "yarn lint:md .",
-    "lint:md": "markdownlint --ignore ./node_modules --ignore ./git",
+    "lint:md": "markdownlint --ignore node_modules --ignore .git --ignore CHANGELOG.md",
     "test": "dotenv -- jest",
     "test:unit": "yarn test test/unit",
     "test:integration": "yarn test test/integration",
