@@ -34,9 +34,9 @@
   },
   "engineStrict": true,
   "scripts": {
+    "postinstall": "link-module-alias",
     "release": "HUSKY_SKIP_HOOKS=1 standard-version",
     "husky-skip": "HUSKY_SKIP_HOOKS=1",
-    "postinstall": "link-module-alias",
     "lint": "yarn lint:js:all && yarn lint:md:all",
     "lint:js:all": "yarn lint:js .",
     "lint:js": "yarn lint:js:pure --fix",
@@ -48,7 +48,7 @@
     "test:integration": "yarn test test/integration",
     "test:coverage": "yarn test --coverage",
     "test:unit:coverage": "yarn test:coverage test/unit",
-    "test:integration:coverage": "yarn run test:coverage test/integration",
+    "test:integration:coverage": "yarn test:coverage test/integration",
     "test:ci:common": "yarn test:coverage --ci --reporters='jest-junit'",
     "start": "dotenv -- nodemon index.js"
   },
