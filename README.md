@@ -59,4 +59,4 @@ yarn lint # lints and formats with eslint and prettier
 
 ## License
 
-[MIT License](./LICENSE). Copyright &copy; 2019, Gil B. Chan <<bnbcmindnpass@gmail.com>> ([@jjangga0214](https://github.com/jjangga0214))
+[MIT License](./LICENSE). Copyright &copy; 2019, Gil B. Chan <[bnbcmindnpass@gmail.com](mailto:bnbcmindnpass@gmail.com)> ([@jjangga0214](https://github.com/jjangga0214))
