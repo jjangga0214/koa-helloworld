@@ -32,29 +32,41 @@ Install dependencies.
 yarn install
 ```
 
-Copy and edit **.env** file as you want. Note that the server requires **.env** file, as it does not have any "default" values.
+Copy and edit **.env** file as you want. Note that the server does not populate any "default" values for environment variables. So, it requires a file **.env.dev**(for development environment) or **.env.prod**(for production environment).
 
 ```bash
-cp .env.example .env
+cp .env.example .env.dev
+cp .env.example .env.prod
 ```
 
-Run the server. There is no command dedicated to local development environment (e.g. `yarn dev`). Both production and development use the same command.
+Run the server.
 
 ```bash
+# on local development environment
+yarn dev
+
+# on production environment
 yarn start
 ```
 
 ## Yarn scripts
 
 ```bash
-yarn test # runs all tests (runs `jest` against "*.test.js")
+# api server
+yarn dev # runs server on local dev environment
+yarn start # runs server on production environment
+
+# tests
+yarn test # runs all tests
 yarn test:unit # runs unit tests
 yarn test:integration # runs integration tests
 yarn test:coverage # runs all tests and measures coverage
 yarn test:unit:coverage # runs unit tests and measures coverage
 yarn test:integration:coverage # runs integration tests and measures coverage
 
-yarn lint # lints and formats with eslint and prettier
+# others
+yarn lint # lints and formats with eslint, prettier, and markdownlint.
+yarn release # creates a release tag, writes CHANGELOG.md and commit.
 ```
 
 ## License
