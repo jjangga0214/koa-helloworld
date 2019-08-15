@@ -17,16 +17,16 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:jjangga0214/koa-helloworld.git"
+    "url": "https://github.com/jjangga0214/koa-helloworld.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/jjangga0214/node-boilerplate/issues"
+    "url": "https://github.com/jjangga0214/koa-helloworld.git/issues"
   },
-  "homepage": "https://gitlab.com/jjangga0214/koa-helloworld",
+  "homepage": "https://github.com/jjangga0214/koa-helloworld",
   "author": {
     "name": "Gil B. Chan",
     "email": "bnbcmindnpass@gmail.com",
-    "url": "https://gitlab.com/jjangga0214"
+    "url": "https://github.com/jjangga0214/"
   },
   "engines": {
     "node": "10.x",
