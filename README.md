@@ -19,6 +19,7 @@ Demo of koa.
 [![DeepScan grade](https://deepscan.io/api/teams/4834/projects/6595/branches/55635/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=4834&pid=6595&bid=55635)
 [![CodeFactor](https://www.codefactor.io/repository/github/jjangga0214/koa-helloworld/badge)](https://www.codefactor.io/repository/github/jjangga0214/koa-helloworld)
 [![Greenkeeper badge](https://badges.greenkeeper.io/jjangga0214/koa-helloworld.svg)](https://greenkeeper.io/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjjangga0214%2Fkoa-helloworld.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjjangga0214%2Fkoa-helloworld?ref=badge_shield)
 
 ## Note
 
@@ -72,3 +73,5 @@ yarn release # creates a release tag, writes CHANGELOG.md and commit.
 ## License
 
 [MIT License](./LICENSE). Copyright &copy; 2019, Gil B. Chan <[bnbcmindnpass@gmail.com](mailto:bnbcmindnpass@gmail.com)> ([@jjangga0214](https://github.com/jjangga0214))
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjjangga0214%2Fkoa-helloworld.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjjangga0214%2Fkoa-helloworld?ref=badge_large)
