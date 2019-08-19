@@ -74,5 +74,4 @@ yarn release # creates a release tag, writes CHANGELOG.md and commit.
 
 [MIT License](./LICENSE). Copyright &copy; 2019, Gil B. Chan <[bnbcmindnpass@gmail.com](mailto:bnbcmindnpass@gmail.com)> ([@jjangga0214](https://github.com/jjangga0214))
 
-
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjjangga0214%2Fkoa-helloworld.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjjangga0214%2Fkoa-helloworld?ref=badge_large)
